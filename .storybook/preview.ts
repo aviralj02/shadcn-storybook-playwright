@@ -1,8 +1,21 @@
 import type { Preview } from "@storybook/nextjs-vite";
 import "@/app/globals.css";
+import { themes } from "storybook/theming";
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      options: {
+        black: { name: "Black", value: "#000000" },
+        light: { name: "Light", value: "#fafafa" },
+      },
+    },
+    initialGlobals: {
+      backgrounds: { value: "black" },
+    },
+    docs: {
+      theme: themes.dark,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
