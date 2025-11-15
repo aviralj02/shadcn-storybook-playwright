@@ -15,6 +15,7 @@ test.describe("Table Component Enhanced Tests", () => {
       (el) => getComputedStyle(el).boxShadow
     );
 
+    await card.focus();
     await card.hover();
     await page.waitForTimeout(300);
 
@@ -81,6 +82,7 @@ test.describe("Table Component Enhanced Tests", () => {
         (el) => getComputedStyle(el).backgroundColor
       );
 
+      await trigger.focus();
       await trigger.hover();
       await page.waitForTimeout(300);
 
@@ -98,6 +100,8 @@ test.describe("Table Component Enhanced Tests", () => {
     const initialBg = await firstRow.evaluate(
       (el) => getComputedStyle(el).backgroundColor
     );
+
+    await firstRow.focus();
     await firstRow.hover();
     await page.waitForTimeout(300);
 
