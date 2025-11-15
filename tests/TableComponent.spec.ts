@@ -16,6 +16,7 @@ test.describe("Table Component Enhanced Tests", () => {
     );
 
     await card.hover();
+    await page.waitForTimeout(150);
 
     const hoverShadow = await card.evaluate(
       (el) => getComputedStyle(el).boxShadow
@@ -81,7 +82,7 @@ test.describe("Table Component Enhanced Tests", () => {
       );
 
       await trigger.hover();
-      await page.waitForTimeout(100);
+      await page.waitForTimeout(150);
 
       const hoverBg = await trigger.evaluate(
         (el) => getComputedStyle(el).backgroundColor
@@ -98,6 +99,8 @@ test.describe("Table Component Enhanced Tests", () => {
       (el) => getComputedStyle(el).backgroundColor
     );
     await firstRow.hover();
+    await page.waitForTimeout(150);
+
     const hoverBg = await firstRow.evaluate(
       (el) => getComputedStyle(el).backgroundColor
     );
